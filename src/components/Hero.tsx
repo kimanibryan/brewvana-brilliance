@@ -80,11 +80,11 @@ const Hero = () => {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a href="#courses" onClick={(e) => { e.preventDefault(); scrollToNext(); }} className="btn-hero">
-            Explore Our Courses
+          <a href="mailto:brewvanabaristaschool@gmail.com" className="btn-hero">
+            Enroll Now
           </a>
-          <a href="#about" onClick={(e) => { e.preventDefault(); document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-outline-hero">
-            Learn More
+          <a href="#courses" onClick={(e) => { e.preventDefault(); scrollToNext(); }} className="btn-outline-hero">
+            Explore Our Courses
           </a>
         </motion.div>
       </motion.div>

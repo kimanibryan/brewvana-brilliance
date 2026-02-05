@@ -61,7 +61,9 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/70 text-sm">
-                  4th Floor, Nairobi Centre
+                  Philadelphia House, Hakati Road
+                  <br />
+                  PR7H+24X, Tom Mboya St
                   <br />
                   Nairobi, Kenya
                 </span>
@@ -69,19 +71,19 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="tel:+254700000791"
+                  href="tel:+254710101791"
                   className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
-                  +254 700 000 791
+                  0710 101 791
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:info@brewvana.com"
+                  href="mailto:brewvanabaristaschool@gmail.com"
                   className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
-                  info@brewvana.com
+                  brewvanabaristaschool@gmail.com
                 </a>
               </li>
             </ul>
@@ -120,13 +122,14 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-4">
             {[
-              { icon: Instagram, href: "#" },
-              { icon: Facebook, href: "#" },
-              { icon: Twitter, href: "#" },
+              { icon: Instagram, href: "https://www.instagram.com/brewvanabarista?igsh=MXcwMndpbXB1NDN1OA==" },
+              { icon: Facebook, href: "https://www.facebook.com/share/1Qhv5RYnRt/" },
             ].map(({ icon: Icon, href }, index) => (
               <motion.a
                 key={index}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -2 }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-primary-foreground/70 hover:bg-accent hover:text-accent-foreground transition-colors"
               >

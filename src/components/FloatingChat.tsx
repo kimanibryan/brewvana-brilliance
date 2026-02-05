@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 const FloatingChat = () => {
   return (
     <motion.a
-      href="mailto:info@brewvana.com"
+      href="mailto:brewvanabaristaschool@gmail.com"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 200 }}

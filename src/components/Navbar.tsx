@@ -84,11 +84,7 @@ const Navbar = () => {
             </motion.a>
           ))}
           <motion.a
-            href="#courses"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("#courses");
-            }}
+            href="mailto:brewvanabaristaschool@gmail.com"
             className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
               isScrolled
                 ? "bg-accent text-accent-foreground hover:bg-honey-dark"
@@ -139,11 +135,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="#courses"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("#courses");
-                }}
+                href="mailto:brewvanabaristaschool@gmail.com"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}

@@ -68,6 +68,26 @@ const Footer = () => {
                   Nairobi, Kenya
                 </span>
               </li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Philadelphia+House,+Tom+Mboya+St,+Nairobi,+Kenya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 overflow-hidden rounded-lg border border-white/20 hover:border-accent transition-colors"
+                >
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819420!2d36.8241!3d-1.2841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22ba12345%3A0x123456789!2sPhiladelphia+House%2C+Tom+Mboya+St%2C+Nairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+                    width="200"
+                    height="120"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Brewvana Location"
+                    className="pointer-events-none"
+                  />
+                </a>
+              </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <a

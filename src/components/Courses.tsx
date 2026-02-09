@@ -1,120 +1,41 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Coffee, Award, Home, Sparkles } from "lucide-react";
+import { Shirt, TreePine, Award, BookOpen, IdCard, Camera } from "lucide-react";
 
-const courses = [
+const features = [
   {
-    id: 1,
-    title: "Professional Barista Training",
-    description:
-      "Master espresso extraction, milk texturing, and coffee theory. Perfect for those starting their barista career.",
-    price: "KSh 25,000",
-    duration: "4 Weeks",
-    icon: Coffee,
-    featured: true,
+    icon: Shirt,
+    title: "Brewvana-Branded Uniform",
+    description: "Every student receives an official Brewvana uniform to wear throughout the training.",
   },
   {
-    id: 2,
-    title: "Latte Art Mastery",
-    description:
-      "From hearts to rosettas to advanced free-pour designs. Elevate your presentation skills to impress every customer.",
-    price: "KSh 15,000",
-    duration: "2 Weeks",
-    icon: Sparkles,
-    featured: false,
+    icon: TreePine,
+    title: "Coffee Farm Visit",
+    description: "Experience the full coffee journey with an immersive visit to a real coffee farm.",
   },
   {
-    id: 3,
-    title: "Home Brewing Excellence",
-    description:
-      "Explore pour-over, French press, Aeropress and more. Brew café-quality coffee in the comfort of your home.",
-    price: "KSh 12,000",
-    duration: "1 Week",
-    icon: Home,
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Advanced Certification",
-    description:
-      "Industry-recognized certification covering advanced techniques, coffee origins, and business management.",
-    price: "KSh 45,000",
-    duration: "4 Weeks",
     icon: Award,
-    featured: false,
+    title: "Certification on Completion",
+    description: "Earn an industry-recognized certificate to kickstart your professional barista career.",
+  },
+  {
+    icon: BookOpen,
+    title: "All Materials Provided",
+    description: "Course materials, resources, and hands-on equipment are fully provided at no extra cost.",
   },
 ];
 
-const CourseCard = ({
-  course,
-  index,
-}: {
-  course: (typeof courses)[0];
-  index: number;
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const Icon = course.icon;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      className={`course-card group ${course.featured ? "md:col-span-2" : ""}`}
-    >
-      <div className="p-8 h-full flex flex-col">
-        {/* Icon & Badge */}
-        <div className="flex items-start justify-between mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
-            <Icon
-              className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors duration-500"
-            />
-          </div>
-          {course.featured && (
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-accent text-accent-foreground">
-              Most Popular
-            </span>
-          )}
-        </div>
-
-        {/* Content */}
-        <h3 className="font-display text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
-          {course.title}
-        </h3>
-        <p className="text-muted-foreground mb-6 flex-grow">
-          {course.description}
-        </p>
-
-        {/* Footer */}
-        <div className="flex items-end justify-between pt-4 border-t border-border/50">
-          <div>
-            <span className="text-2xl font-bold text-foreground">
-              {course.price}
-            </span>
-            <span className="block text-sm text-muted-foreground">
-              {course.duration}
-            </span>
-          </div>
-          <motion.a
-            href="mailto:brewvanabaristaschool@gmail.com"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-espresso-light transition-colors duration-300"
-          >
-            Enroll Now
-          </motion.a>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+const entryRequirements = [
+  { icon: IdCard, text: "Original ID Photocopy" },
+  { icon: Camera, text: "Passport Photo" },
+];
 
 const Courses = () => {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
+  const cardRef = useRef(null);
+  const isCardInView = useInView(cardRef, { once: true, margin: "-100px" });
 
   return (
     <section id="courses" className="py-24 bg-background">
@@ -130,19 +51,94 @@ const Courses = () => {
           <span className="inline-block px-4 py-2 rounded-full text-sm font-medium tracking-wider uppercase mb-4 bg-accent/10 text-accent">
             What We Offer
           </span>
-          <h2 className="section-title">Our Courses</h2>
+          <h2 className="section-title text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+            Hello😊👋! Welcome to Brewvana Barista School.
+            <br />
+            <span className="text-accent">We offer Professional Barista Course for 1 month.</span>
+          </h2>
           <p className="section-subtitle">
-            From beginner to professional, find the perfect course to elevate
-            your coffee skills and launch your barista career.
+            Master espresso extraction, milk texturing, latte art, and coffee theory.
+            Everything you need to launch your barista career — all in one comprehensive course.
           </p>
         </motion.div>
 
-        {/* Course Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {courses.map((course, index) => (
-            <CourseCard key={course.id} course={course} index={index} />
-          ))}
-        </div>
+        {/* Features Grid */}
+        <motion.div
+          ref={cardRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isCardInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isCardInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="course-card group"
+                >
+                  <div className="p-6 flex gap-4 items-start">
+                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
+                      <Icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors duration-500" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">{feature.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Entry Requirements */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isCardInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="course-card p-8 mb-8"
+          >
+            <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">
+              Entry Requirements
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              {entryRequirements.map((req) => {
+                const Icon = req.icon;
+                return (
+                  <div key={req.text} className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <span className="text-foreground font-medium">{req.text}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isCardInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-center"
+          >
+            <motion.a
+              href="mailto:brewvanabaristaschool@gmail.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-8 py-3 rounded-full bg-accent text-accent-foreground font-semibold text-lg hover:opacity-90 transition-opacity duration-300"
+            >
+              Inquire for Details
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ const courses = [
     description:
       "Industry-recognized certification covering advanced techniques, coffee origins, and business management.",
     price: "KSh 45,000",
-    duration: "8 Weeks",
+    duration: "4 Weeks",
     icon: Award,
     featured: false,
   },

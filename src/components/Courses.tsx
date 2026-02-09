@@ -98,13 +98,14 @@ const CourseCard = ({
               {course.duration}
             </span>
           </div>
-          <motion.button
+          <motion.a
+            href="mailto:brewvanabaristaschool@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-espresso-light transition-colors duration-300"
           >
             Enroll Now
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.div>

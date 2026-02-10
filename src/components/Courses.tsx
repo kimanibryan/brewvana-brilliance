@@ -52,9 +52,9 @@ const Courses = () => {
             What We Offer
           </span>
           <h2 className="section-title text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-            Hello😊👋! Welcome to Brewvana Barista School.
+            Welcome to Brewvana Barista School.
             <br />
-            <span className="text-accent">We offer Professional Barista Course for 1 month.</span>
+            <span className="text-accent">We offer a Professional Barista Course for 1 month.</span>
           </h2>
           <p className="section-subtitle">
             Master espresso extraction, milk texturing, latte art, and coffee theory.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Clock } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -109,30 +109,56 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Business Hours */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-6">Newsletter</h4>
-            <p className="text-primary-foreground/70 text-sm mb-4">
-              Subscribe to get updates on new courses and coffee tips.
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-accent transition-colors text-sm"
-              />
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-honey-dark transition-colors text-sm"
-              >
-                {subscribed ? "Subscribed!" : "Subscribe"}
-              </motion.button>
-            </form>
+            <h4 className="font-display text-lg font-bold mb-6 flex items-center gap-2">
+              <Clock className="w-5 h-5 text-accent" />
+              Business Hours
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { day: "Monday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Tuesday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Wednesday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Thursday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Friday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Saturday", hours: "9:00 AM – 5:00 PM" },
+                { day: "Sunday", hours: "Closed" },
+              ].map(({ day, hours }) => (
+                <li key={day} className="flex justify-between gap-2">
+                  <span className="text-primary-foreground/70">{day}</span>
+                  <span className={`font-medium ${hours === "Closed" ? "text-destructive" : "text-accent"}`}>
+                    {hours}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="mb-16">
+          <h4 className="font-display text-lg font-bold mb-4">Newsletter</h4>
+          <p className="text-primary-foreground/70 text-sm mb-4">
+            Subscribe to get updates on new courses and coffee tips.
+          </p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-accent transition-colors text-sm"
+            />
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-honey-dark transition-colors text-sm"
+            >
+              {subscribed ? "Subscribed!" : "Subscribe"}
+            </motion.button>
+          </form>
         </div>
 
         {/* Bottom Bar */}
